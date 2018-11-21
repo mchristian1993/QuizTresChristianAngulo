@@ -9,27 +9,27 @@ export class FirebaseService {
 
 
   // Metodo para listar todas las imagenes
-  public getImages() {
-    return this.db.list('images').valueChanges();
+  public getUsers() {
+    return this.db.list('user').valueChanges();
   }
 
   // Metodo para obtener una sola imagen
-  public getImage(id) {
-    return this.db.object('images/' + id);
+  public getUser(id) {
+    return this.db.object('user/' + id);
   }
 
   // Metodo crear una imagen
-  public createImage(image) {
-    this.db.database.ref('images/' + image.id).set(image);
+  public createuser(user) {
+    this.db.database.ref('user/' + user.id).set(user);
   }
 
   // Metodo para actualizar los datos de una imagen
-  public updateImage(image) {
-    this.db.database.ref('images/' + image.id).set(image);
+  public updateUser(user) {
+    this.db.database.ref('user/' + user.id).set(user);
   }
 
   // Metodo para eliminar una imagen
-  public deleteImage(id) {
-    this.db.object('images/' + id).remove();
+  public deleteUser(id) {
+    this.db.object('user/' + id).remove();
   }
 }

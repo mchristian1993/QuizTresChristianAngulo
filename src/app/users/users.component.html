@@ -1,0 +1,50 @@
+<div>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label>Nombre</label>
+      <input type="text" class="form-control" placeholder="Nombre" [(ngModel)]="user.nombre">
+    </div>
+    <div class="form-group col-md-3">
+      <label>Correo electronico</label>
+      <input type="email" class="form-control" id="inputPassword4" placeholder="Correo electronico"
+             [(ngModel)]="user.correo">
+    </div>
+    <div class="form-group col-md-3">
+      <label>Celular</label>
+      <input class="form-control" placeholder="celular" [(ngModel)]="user.celular">
+    </div>
+    <div class=" col-md-3">
+
+      <button type="button" class="btn btn-success" (click)="validateStatusButton()">{{textButton}}</button>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="border">
+  <div class="row" *ngFor="let user of userss | async">
+
+    <div class="col-2">
+      <img class="card-img-top"
+           src="https://www.cinecalidad.to/wp-content/uploads/2018/11/mision-imposible-repercusion.jpg"
+           alt="Card image cap" width="50" height="50">
+    </div>
+    <div class="col-4">
+      <p>{{user.nombre}} <br>
+        <small>{{user.correo}}</small>
+        <br>
+        <small>{{user.telefono}}</small>
+      </p>
+    </div>
+    <div class="col-3" align="center">
+      <button type="button" class="btn btn-secondary-" (click)="getUser(user.id)">Editar</button>
+    </div>
+    <div class="col-3" align="center">
+      <button type="button" class="btn btn-danger" (click)="deleteUser(user.id)">Eliminar</button>
+    </div>
+
+  </div>
+
+</div>

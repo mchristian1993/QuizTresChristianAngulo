@@ -9,10 +9,11 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {FormsModule} from '@angular/forms';
 import {FirebaseService} from './services/firebase.service';
+import { UsersComponent } from './users/users.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-
+  {path: 'users/:status', component: UsersComponent},
   {path: 'images/:status', component: ImagenesComponent},
 ];
 
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
     AppComponent,
     ImagenesComponent,
     HomeComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
